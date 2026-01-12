@@ -164,8 +164,66 @@ tr:hover {
 }
 .card {
     background-color: white;
-/* Responsive media queries moved to the end of the file to ensure
-   they override later base styles. See appended blocks at file end. */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.card-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+.search-form {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+.search-form input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+.search-form button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+.modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -261,7 +319,7 @@ nav a {
 nav a:hover {
     color: #e67e22;
 }
-
+}
 
 main {
     padding: 30px;
@@ -299,7 +357,7 @@ main {
 .search button:hover {
     background: #e67e22;
 }
-
+}
 
 .book-list {
     background: #fff;
@@ -397,66 +455,4 @@ footer {
     z-index: 1000;
     min-width: 300px;
     text-align: center;
-}
-
-/* -- Responsive rules (moved here to override earlier base styles) -- */
-@media (max-width: 768px) {
-    .dashboard {
-        grid-template-columns: 1fr;
-    }
-    .sidebar {
-        margin-bottom: 1.5rem;
-    }
-    header {
-        text-align: left;
-    }
-    .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-    .logo {
-        font-size: 1.5rem;
-        text-align: left;
-    }
-    .nav-menu {
-        justify-content: flex-start;
-    }
-    .nav-menu li {
-        margin: 0.25rem 0.75rem 0.25rem 0;
-    }
-    main {
-        padding: 20px;
-    }
-    .login-container {
-        margin: 1.5rem auto;
-        padding: 1.5rem;
-        width: 100%;
-    }
-    table {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        font-size: 1.3rem;
-    }
-    .nav-menu {
-        justify-content: center;
-    }
-    .nav-menu li {
-        margin: 0.25rem 0.5rem;
-    }
-    .card {
-        padding: 1.1rem;
-    }
-    .btn {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 0.5rem;
-    }
 }
