@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholar's Archive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Scholar's Archive</div>
+            <ul class="nav-menu">
+                <li><a href="#" id="nav-home">Home</a></li>
+                <li><a href="#" id="nav-support">Support</a></li>
+                <li><a href="#" id="nav-contact">Contact</a></li>
+                <li><a href="#" id="nav-login">Login</a></li>
+                <li><a href="#" id="nav-signup">Sign Up</a></li>
+                <li><a href="#" id="nav-logout" style="display: none;">Logout</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Home Section -->
+        <section id="home-section">
+            <div class="card">
+                <h2>Welcome to Scholar's Archive</h2>
+                <p>This demo lets different types of users (Users, Librarians, Stock Managers, Accountants) explore how a digital library system works.</p>
+                <p>Use the navigation above to log in, sign up, or read the Support page for guidance.</p>
+                <div class="card" style="margin-top:1rem;">
+                    <h3>Quick Start</h3>
+                    <ul>
+                        <li>New here? Click <strong>Sign Up</strong> and create a <strong>User</strong> account.</li>
+                        <li>Already have an account? Click <strong>Login</strong>.</li>
+                        <li>Need help deciding your role? Visit the <strong>Support</strong> page.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support / FAQ Section -->
+        <section id="support-section" style="display: none;">
+            <div class="card">
+                <h2>Support &amp; FAQs</h2>
+                <p>Choose the question that matches what you want to do. Each answer can take you directly to the right place in the app.</p>
+
+                <h3>1. I am a regular user who wants to borrow books. What should I do?</h3>
+                <p>
+                    If you only need to search and borrow books, use the <strong>User</strong> role.
+                </p>
+                <ol>
+                    <li>Click the button below to go to the login screen with the User role pre-selected.</li>
+                    <li>Log in with your username and password, or sign up if you are new.</li>
+                    <li>After login, use <em>Search Books</em>, <em>My Books</em>, and <em>Pay Fines</em> from your dashboard.
+                    </li>
+                </ol>
+                <button class="btn btn-primary" onclick="goToRoleLogin('student')">Go to User Login</button>
+
+                <h3 style="margin-top:2rem;">2. I manage the library catalogue and users. Which role should I use?</h3>
+                <p>
+                    Use the <strong>Librarian</strong> role to view all books, all users, fines, and stock overview, and to issue books.
+                </p>
+                <button class="btn" onclick="goToRoleLogin('librarian')">Go to Librarian Login</button>
+
+                <h3 style="margin-top:2rem;">3. I take care of stock and new book orders.</h3>
+                <p>
+                    Use the <strong>Stock Manager</strong> role to add books and raise order requests.
+                </p>
+                <button class="btn" onclick="goToRoleLogin('stock_manager')">Go to Stock Manager Login</button>
+
+                <h3 style="margin-top:2rem;">4. I handle fines and payments.</h3>
+                <p>
+                    Use the <strong>Accountant</strong> role to see fine reports, acknowledgements, issue receipts, and create new fines.
+                </p>
+                <button class="btn" onclick="goToRoleLogin('accountant')">Go to Accountant Login</button>
+
+                <h3 style="margin-top:2rem;">5. How do I sign up as a new user?</h3>
+                <ol>
+                    <li>Click the <strong>Sign Up</strong> link in the top navigation.</li>
+                    <li>Fill in your <em>Name</em>, <em>Username</em>, <em>Email</em>, <em>Password</em>, and choose a <em>Role</em>.</li>
+                    <li>Submit the form, then use <strong>Login</strong> with the same username, password, and role.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section" style="display: none;">
+            <div class="card">
+                <h2>Contact</h2>
+                <p>This is a static demo application. For real systems you would typically contact the library via:</p>
+                <ul>
+                    <li>Email: <strong>library-support@example.com</strong></li>
+                    <li>Phone: <strong>+1 (000) 000-0000</strong></li>
+                </ul>
+                <p>You can also use this simple form (demo only, it does not send anything):</p>
+                <form>
+                    <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" placeholder="you@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message</label>
+                        <input type="text" id="contact-message" placeholder="Your message (demo only)">
+                    </div>
+                    <button type="button" class="btn" onclick="alert('This is a demo. In a real system this would send your message to the library staff.')">Send (Demo)</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Login Section -->
+        <section id="login-section">
+            <div class="login-container">
+                <h2>Login to Scholar's Archive</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select id="role">
+                            <option value="student">User</option>
+                            <option value="librarian">Librarian</option>
+                            <option value="stock_manager">Stock Manager</option>
+                            <option value="accountant">Accountant</option>
+                        </select>
+                 </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Signup Section (initially hidden) -->
+        <section id="signup-section" style="display: none;">
+            <div class="login-container">
+                <h2>Sign Up</h2>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <label for="signup-name">Name</label>
+                        <input type="text" id="signup-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-username">Username</label>
+                        <input type="text" id="signup-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-role">Role</label>
+                        <select id="signup-role">
+                            <option value="student">User</option>
+                            <option value="librarian">Librarian</option>
+                            <option value="stock_manager">Stock Manager</option>
+                            <option value="accountant">Accountant</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Dashboard Section (initially hidden) -->
+        <section id="dashboard-section" style="display: none;">
+            <div class="dashboard">
+                <div class="sidebar">
+                    <h3>Menu</h3>
+                    <ul class="sidebar-menu" id="role-menu">
+                        <!-- Menu items will be populated based on role -->
+                    </ul>
+                </div>
+                <div class="main-content">
+                    <h2 id="dashboard-title">Dashboard</h2>
+                    <div id="dashboard-content">
+                        <!-- Content will be populated based on menu selection -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Book Details Modal -->
+    <div class="modal" id="book-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Book Details</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div id="book-modal-content">
+                <!-- Book details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
