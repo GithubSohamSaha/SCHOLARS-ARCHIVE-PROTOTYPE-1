@@ -319,7 +319,7 @@ nav a {
 nav a:hover {
     color: #e67e22;
 }
-}
+
 
 main {
     padding: 30px;
@@ -357,7 +357,7 @@ main {
 .search button:hover {
     background: #e67e22;
 }
-}
+
 
 .book-list {
     background: #fff;
