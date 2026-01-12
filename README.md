@@ -1,10 +1,60 @@
-Scholar's Archive – Prototype 1Scholar's Archive is a static, role‑based Library Management System (LMS) prototype built with plain HTML, CSS, and JavaScript. It simulates a multi-stakeholder environment (Users, Librarians, Stock Managers, Accountants) running entirely in the browser.Because it is 100% front‑end, it can be hosted easily via GitHub Pages and requires no server setup.🚀 Live DemoOnce GitHub Pages is enabled, the app will be available at:https://githubsohamsaha.github.io/SCHOLARS-ARCHIVE-PROTOTYPE-1/✨ Features👥 Multiple RolesUser (Reader): Search and borrow books, view history, and pay fines.Librarian: Manage book inventory, view user records, track fines, and issue books.Stock Manager: Add new titles, raise stock order requests, and monitor stock alerts.Accountant: Manage fine reports, acknowledge payments, and issue receipts.🔐 Authentication & PersistenceRole-Based Login: Form-based login with role selection.Sign-Up: Create new accounts for any role dynamically.Session Persistence: Uses localStorage to keep users logged in across page reloads.📚 Core WorkflowsBook Catalogue: Search with filters (Title, Author, Subject).Borrow/Return: Automatic fine calculation for late returns.Simulated Payments: Integrated "Payment Gateway" modal for fine settlement.Multi-Tab Sync: Real-time data updates across tabs using the storage event.🛠 Tech StackComponentTechnologyStructureHTML5StylingCSS3LogicVanilla JavaScriptStorageBrowser localStorageDeploymentGitHub Pages📁 Project StructurePlaintext.
-├── index.html    # Main entry point & structure
-├── style.css     # Layout and styling
-├── script.js    # Logic, role handling, & data simulation
-└── README.md     # Project documentation
-Note: The backend/ folder is not required for this static demo.🏃 Getting Started (Run Locally)1. PrerequisitesA modern web browser (Chrome, Edge, Firefox, Safari).2. Easiest Method: Direct OpenClone or download this repository.Navigate to the project folder.Double-click index.html to launch in your browser.3. Optional: Local Web ServerIf you have Node.js installed, you can serve it via:Bashnpx serve .
-# OR
-npm install -g http-server
-http-server .
-🌐 Deploying on GitHub PagesPush the code to your GitHub repository.Go to Settings → Pages.Set Source to "Deploy from a branch".Select the main branch and the / (root) folder.Click Save.📋 Sample Demo UsersUse these predefined accounts to test the different role dashboards:RoleUsernamePasswordUserAkash Roypass123Librarianlibrarian1pass123Stock Managerstock1pass123Accountantaccountant1pass123⚠️ Limitations & Data PersistenceLocal Storage: Data is stored in your browser. It is not shared across different devices or browsers.Incognito Mode: Data will be wiped once the private session ends.Static Nature: There is no real email service or financial backend; all "requests" and "payments" are simulated for UI/UX demonstration.📜 LicenseThis project is available under the MIT License.Would you like me to add a "Contribution Guidelines" section or expand on the specific JavaScript logic used for the multi-tab synchronization?
+# Scholar's Archive – Prototype 1
+
+Scholar's Archive is a static, role‑based Library Management System prototype built with plain HTML, CSS, and JavaScript. It simulates how different stakeholders (Users, Librarians, Stock Managers, Accountants) interact with a library system—running entirely in the browser using `localStorage`.
+
+Because it is 100% front‑end, it can be hosted easily on GitHub Pages and accessed from anywhere.
+
+---
+
+## 🚀 Live Demo
+
+Once GitHub Pages is enabled for this repository, the app will be available at:  
+**`https://githubsohamsaha.github.io/SCHOLARS-ARCHIVE-PROTOTYPE-1/`**
+
+---
+
+## ✨ Features
+
+### 👥 Multiple Roles
+* **User** – Search and borrow books, view borrowed history, pay fines.
+* **Librarian** – View all books, all users, fines, stock overview, and issue books.
+* **Stock Manager** – Add new book data, raise stock order requests, and see stock alerts.
+* **Accountant** – Manage fines, view fine reports, acknowledge payments, and issue receipts.
+
+### 🔐 Authentication (Demo)
+* Login form with role selection.
+* Sign‑up form to create new accounts for any role.
+* Session persistence using `localStorage` so page reloads keep you logged in.
+
+### 📚 Core User Flows
+* **Book Catalogue:** Search with filters on title, author, and subject.
+* **Borrow/Return:** Automatic fine calculation for late returns.
+* **Payments:** Simple "payment gateway" modal (simulated) for individual or "pay all" fine options.
+* **Dashboards:** Role-specific menus and overview data.
+
+### 🔄 Multi-Tab Sync
+* Data (books, borrows, fines, users) is stored in `localStorage` and synced across tabs using the `storage` event.
+* *Example:* If an Accountant issues a fine in one tab, the User tab updates automatically without a refresh.
+
+### 🌐 Public Pages
+* **Home** – Overview and quick start guide.
+* **Support / FAQs** – Role guidance with buttons that pre-select roles for login.
+* **Contact** – Static contact info and a demo contact form.
+
+---
+
+## 🛠 Tech Stack
+
+* **HTML5** – Structure (`index.html`)
+* **CSS3** – Layout and styling (`style.css`)
+* **Vanilla JavaScript** – Logic, role handling, and data simulation (`script.js`)
+* **localStorage** – Persistent demo "database" in the browser.
+* **No Backend** – No server or real database required.
+
+---
+
+## 📁 Project Structure
+
+```text
+> The static prototype runs entirely from index.html + script.js + style.css.
+> The backend/ folder is not required for this static demo.
